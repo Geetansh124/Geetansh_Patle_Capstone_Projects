@@ -1,0 +1,19 @@
+{
+  "popularity": {
+    "recall_at_k": 0.37166666666666665,
+    "ndcg_at_k": 0.26673223015423503,
+    "k": 10,
+    "users": 50,
+    "ctr": null
+  },
+  "genre_personalized": {
+    "recall_at_k": 0.28766666666666674,
+    "ndcg_at_k": 0.20205122387864172,
+    "k": 10,
+    "users": 50,
+    "ctr": null
+  },
+  "baseline": "global popularity excluding user's training history",
+  "split": "per-user chronological 80/20",
+  "ctr": null
+}

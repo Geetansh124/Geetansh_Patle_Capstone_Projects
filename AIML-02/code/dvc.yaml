@@ -1,0 +1,5 @@
+stages:
+  manifest:
+    cmd: python src/validate_manifest.py --csv ${data.chest_csv}
+    deps: [src/validate_manifest.py]
+    outs: [artifacts/manifest_summary.json]

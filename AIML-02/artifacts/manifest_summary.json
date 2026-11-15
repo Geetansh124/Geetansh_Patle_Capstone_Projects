@@ -1,0 +1,22 @@
+{
+  "status": "valid",
+  "total_records": 25,
+  "unique_patients": 10,
+  "unique_images": 25,
+  "duplicate_images": 0,
+  "null_counts": {
+    "Image Index": 0,
+    "Patient ID": 0,
+    "Finding Labels": 0
+  },
+  "multi_label_records": 8,
+  "multi_label_ratio": 0.32,
+  "label_counts": {
+    "No Finding": 11,
+    "Atelectasis": 8,
+    "Infiltration": 6,
+    "Effusion": 5,
+    "Cardiomegaly": 3
+  },
+  "notice": "For education only \u2014 not for clinical use."
+}

@@ -1,0 +1,35 @@
+name: "wide_deep"
+platform: "tensorflow_savedmodel"
+max_batch_size: 1024
+
+input [
+  {
+    name: "userId"
+    data_type: TYPE_INT32
+    dims: [ 1 ]
+  },
+  {
+    name: "movieId"
+    data_type: TYPE_INT32
+    dims: [ 1 ]
+  }
+]
+
+output [
+  {
+    name: "dense_output"
+    data_type: TYPE_FP32
+    dims: [ 1 ]
+  }
+]
+
+instance_group [
+  {
+    count: 1
+    kind: KIND_CPU
+  }
+]
+
+dynamic_batching {
+  max_queue_delay_microseconds: 1000
+}

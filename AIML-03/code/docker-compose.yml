@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      ARTIFACTS_DIR: /artifacts
+    volumes: ["./artifacts:/artifacts:ro"]
+    depends_on: [redis]
+  airflow:
+    image: apache/airflow:2.9.3
+    profiles: ["orchestration"]
+    ports: ["8080:8080"]
+    command: standalone
+    environment: {AIRFLOW__CORE__LOAD_EXAMPLES: "false"}
+  triton:
+    image: nvcr.io/nvidia/tritonserver:24.05-py3
+    profiles: ["gpu-serving"]
+    command: ["tritonserver", "--model-repository=/models"]
+    ports: ["8001:8001", "8002:8002"]

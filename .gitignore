@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Large Datasets (Per Project Guide)
+data/
+*.nii
+*.nii.gz
+*.dcm
+*.tar.gz
+*.zip
+
+# Checkpoints & Large Model Artifacts
+*.h5
+*.keras
+*.pt
+*.pth
+*.faiss
+artifacts/densenet121.pt
+artifacts/msd_task06_unet.pt
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+
+# OS Files
+.DS_Store
+Thumbs.db
